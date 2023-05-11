@@ -16,7 +16,7 @@ public class Executavel {
     public static void main(String[] args) throws ExecaoProcessar {
 
         try {
-            lerArquivo();
+            //lerArquivo();
             
             String login = JOptionPane.showInputDialog("Informe o login: ");
             String senha = JOptionPane.showInputDialog("Informe a senha: ");
@@ -55,11 +55,7 @@ public class Executavel {
             }
 
             JOptionPane.showMessageDialog(null, "Erro ao processar usuario");
-        } catch(FileNotFoundException e){
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Erro na excecao customizada: "+e.getClass().getName());
-            
-        }  finally{ //sempre é executado ocorrendo erros ou não, porque finally sempre é usado quando
+        } finally{ //sempre é executado ocorrendo erros ou não, porque finally sempre é usado quando
                    //precisa executar um processo acontecendo erros ou não
             JOptionPane.showMessageDialog(null,"Obrigado por usar nosso sistema");
         }
