@@ -1,5 +1,5 @@
 
-package modelView;
+package modelExecutaveis;
 
 import javax.swing.JOptionPane;
 import modelDominio.Aluno;

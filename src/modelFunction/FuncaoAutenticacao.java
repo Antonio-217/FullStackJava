@@ -1,7 +1,7 @@
 
 package modelFunction;
 
-import modelView.PermitirAcesso;
+import modelExecutaveis.PermitirAcesso;
 
 public class FuncaoAutenticacao {
     

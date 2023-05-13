@@ -1,5 +1,5 @@
 
-package modelView;
+package modelExecutaveis;
 
 /*Essa interface será nosso contrato de autenticação*/
 public interface PermitirAcesso {

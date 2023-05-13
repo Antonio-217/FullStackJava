@@ -1,7 +1,7 @@
 
 package modelDominio;
 
-import modelView.PermitirAcesso;
+import modelExecutaveis.PermitirAcesso;
 
 public class Medico extends Usuario implements PermitirAcesso{
     
