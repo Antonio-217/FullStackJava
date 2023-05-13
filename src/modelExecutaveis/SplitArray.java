@@ -44,8 +44,5 @@ public class SplitArray {
             System.out.println("Texto:"+conversaoArray[i]);
         }
             
-        }
-        
-        
+        }   
     }
-}
