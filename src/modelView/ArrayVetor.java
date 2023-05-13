@@ -25,7 +25,7 @@ public class ArrayVetor {
         
         //cria√ß√£o da disciplina
         Disciplina disciplina2 = new Disciplina();
-        disciplina2.setDisciplina("Logica de programa√ß√£o");
+        disciplina2.setDisciplina("Logica de programaÁ„o");
         disciplina2.setNota(notasLogica);  
         
         aluno.getDisciplinas().add(disciplina2);
@@ -36,28 +36,50 @@ public class ArrayVetor {
         for (Disciplina d : aluno.getDisciplinas()) {
             
             System.out.println("\nDisciplina: "+d.getDisciplina());
-            System.out.println("\nAs notas da disciplina s√£o: ");
+            System.out.println("\nAs notas da disciplina s„o: ");
             
+            double notaMax = 0.0;
             for (int i = 0; i <d.getNota().length; i++) {
-                System.out.println("Nota "+i+" √© igual = "+d.getNota()[i]);
+                System.out.println("Nota "+i+" È igual = "+d.getNota()[i]);
+                
+                if (i == 0) {
+                    notaMax = d.getNota()[i];
+                } else if(d.getNota()[i] > notaMax){
+                         notaMax = d.getNota()[i]; 
+                }
             }
+            System.out.println("A maior nota da disciplina = "+d.getDisciplina()+" e de valor = "+notaMax);
+            
+            double notaMin = 0.0;
+            for (int i = 0;i<d.getNota().length; i++) {
+                System.out.println("Nota "+i+" È igual = "+d.getNota()[i]);
+                
+                if (i == 0) {
+                    notaMax = d.getNota()[i];
+                } else if(d.getNota()[i] < notaMax){
+                         notaMax = d.getNota()[i]; 
+                }
+            }
+            System.out.println("A menor nota da disciplina = "+d.getDisciplina()+" e de valor = "+notaMin);
         }
         
         
         
         
-        String posicoes = JOptionPane.showInputDialog("Digite a quantidade de posi√ß√µes do array");
+        
+        
+        String posicoes = JOptionPane.showInputDialog("Digite a quantidade de posiÁıes do array");
         
         //array deve sempre ter a quantidade de posi√ß√µes definidas
         double [] notas1 = new double[Integer.parseInt(posicoes)];
         
         for (int i = 0; i < notas1.length; i++) {
-            String valor = JOptionPane.showInputDialog("Informe o valor para a posi√ß√£o "+i);
+            String valor = JOptionPane.showInputDialog("Informe o valor para a posiÁ„o "+i);
             notas1[i] = Double.valueOf(valor);
         }     
         
         for (int i = 0; i < notas1.length; i++) {
-            System.out.println("Nota "+i+" √© = "+notas1[i]);
+            System.out.println("Nota "+i+" È = "+notas1[i]);
         }
         
         
@@ -68,7 +90,7 @@ public class ArrayVetor {
                           //1    2     3
         Double[] valores = {um, dois, tres};
         for (int i = 0; i < valores.length; i++) {
-            System.out.println("Valores na posi√ß√£o "+i+" √© igual = "+valores[i]);
+            System.out.println("Valores na posiÁ„o "+i+" È igual = "+valores[i]);
         }
         
         
@@ -78,7 +100,7 @@ public class ArrayVetor {
         valores1[1] = "18";
         valores1[2] = "antoniobuenas@gmail.com";
         for (int i = 0; i < valores1.length; i++) {
-            System.out.println("Valores na posi√ß√£o "+i+" √© igual = "+valores1[i]);
+            System.out.println("Valores na posiÁ„o "+i+" È igual = "+valores1[i]);
         }
         
         
