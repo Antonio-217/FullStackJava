@@ -2,6 +2,8 @@
 package modelView;
 
 import javax.swing.JOptionPane;
+import modelDominio.Aluno;
+import modelDominio.Disciplina;
 
 public class PrimeiraClasse {
     
