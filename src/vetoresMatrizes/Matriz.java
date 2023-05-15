@@ -1,4 +1,4 @@
-package modelExecutaveis;
+package vetoresMatrizes;
 
 public class Matriz {
     

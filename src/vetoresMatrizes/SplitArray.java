@@ -1,4 +1,4 @@
-package modelExecutaveis;
+package vetoresMatrizes;
 
 import java.util.Arrays;
 import java.util.List;

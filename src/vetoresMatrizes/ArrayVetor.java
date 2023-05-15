@@ -1,4 +1,4 @@
-package modelExecutaveis;
+package vetoresMatrizes;
 
 import javax.swing.JOptionPane;
 import modelDominio.Aluno;
