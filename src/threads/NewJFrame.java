@@ -16,6 +16,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jTFhora.setEnabled(false);
         jLrelogioTexto.setEnabled(false); 
     }
+    //variavel para parar as threads
     boolean cancela = false;  
     
     private Runnable threadData = new Runnable() {
