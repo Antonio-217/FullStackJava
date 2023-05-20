@@ -13,7 +13,7 @@ public class ImplementacaoFilaThread extends Thread {/*para usar todos os recurs
     public static void add(ObjetoFilaThread objetoFilaThread) {
         pilhaFila.add(objetoFilaThread);
     }
-
+    
     @Override
     public void run() {
         System.out.println("Fila rodando");

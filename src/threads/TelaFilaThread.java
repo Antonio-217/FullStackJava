@@ -25,7 +25,7 @@ public class TelaFilaThread extends javax.swing.JFrame {
         jTFnome = new javax.swing.JTextField();
         jLemail = new javax.swing.JLabel();
         jTFemail = new javax.swing.JTextField();
-        jBaddLista = new javax.swing.JButton();
+        jBgerar = new javax.swing.JButton();
         jBstop = new javax.swing.JButton();
         jLerroNome = new javax.swing.JLabel();
         jLerroEmail = new javax.swing.JLabel();
@@ -38,10 +38,10 @@ public class TelaFilaThread extends javax.swing.JFrame {
 
         jLemail.setText("E-mail");
 
-        jBaddLista.setText("Add Lista");
-        jBaddLista.addActionListener(new java.awt.event.ActionListener() {
+        jBgerar.setText("Gerar");
+        jBgerar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBaddListaActionPerformed(evt);
+                jBgerarActionPerformed(evt);
             }
         });
 
@@ -65,17 +65,20 @@ public class TelaFilaThread extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLerroEmail)
-                    .addComponent(jLerroNome)
                     .addComponent(jLemail)
                     .addComponent(jLnome)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jBaddLista, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBgerar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                             .addComponent(jBstop, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jTFemail, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTFnome, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addComponent(jTFnome, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLerroNome)
+                            .addComponent(jLerroEmail))))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -95,7 +98,7 @@ public class TelaFilaThread extends javax.swing.JFrame {
                 .addComponent(jLerroEmail)
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBaddLista, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBgerar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBstop, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(86, Short.MAX_VALUE))
         );
@@ -103,16 +106,22 @@ public class TelaFilaThread extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBaddListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBaddListaActionPerformed
-        if (!jTFnome.getText().equals("")) {
+    private void jBgerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBgerarActionPerformed
+        if (fila == null) {
+            fila = new ImplementacaoFilaThread();
+            fila.start();
+        }
+        for (int i = 0; i < 10; i++) {
+            if (!jTFnome.getText().equals("")) {
             if (!jTFemail.getText().equals("")) {
                String nome = jTFnome.getText();
                String email = jTFemail.getText();
                       
                 //criando o objeto
-                ObjetoFilaThread filaThread = new ObjetoFilaThread(nome, email);
+                ObjetoFilaThread filaThread = new ObjetoFilaThread(i+" - "+nome, email);
                 //adicionando na lista
                 fila.add(filaThread);
+                
                 contadorCliques++;
             }else{
                 jLerroEmail.setVisible(true);     
@@ -120,14 +129,15 @@ public class TelaFilaThread extends javax.swing.JFrame {
         }else{
             jLerroNome.setVisible(true);
         }
-        
-    }//GEN-LAST:event_jBaddListaActionPerformed
+        }
+    }//GEN-LAST:event_jBgerarActionPerformed
 
     private void jBstopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBstopActionPerformed
+   
+        fila = null;
         
     }//GEN-LAST:event_jBstopActionPerformed
 
-   
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -161,7 +171,7 @@ public class TelaFilaThread extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBaddLista;
+    private javax.swing.JButton jBgerar;
     private javax.swing.JButton jBstop;
     private javax.swing.JLabel jLemail;
     private javax.swing.JLabel jLerroEmail;
