@@ -6,7 +6,7 @@ public class ExemploThread {
 
     public static void main(String[] args) throws InterruptedException {
 
-        //thread processamento paralelo de envio do email
+        //thread processamento paralelo de envio do emails
         Thread threadEmail = new Thread(thread1);
         threadEmail.start();
         
