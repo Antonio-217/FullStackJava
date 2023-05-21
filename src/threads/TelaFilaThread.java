@@ -8,7 +8,7 @@ public class TelaFilaThread extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         
-        fila.start();//inicia a thread ImplementacaoFilaThread
+        fila.start();//inicia a Thread ImplementacaoFilaThread
         
         jLerroNome.setVisible(false);
         jLerroEmail.setVisible(false);
