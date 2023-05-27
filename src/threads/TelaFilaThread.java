@@ -13,7 +13,7 @@ public class TelaFilaThread extends javax.swing.JFrame {
         jLerroNome.setVisible(false);
         jLerroEmail.setVisible(false);
     }
-    int contadorCliques = 0;
+    int contadorCliques = 0;//conta a quantidade de cliques feitas pelo usuario
     
     private ImplementacaoFilaThread fila = new ImplementacaoFilaThread();
 
