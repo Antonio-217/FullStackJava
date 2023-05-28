@@ -1,16 +1,14 @@
 package threads;
 
-import java.time.Duration;
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class ImplementacaoFilaThread extends Thread {/*para usar todos os recursos de thread precisa ser "extendida"*/
 
+    //criando a lista do objeto
     private static ConcurrentLinkedQueue<ObjetoFilaThread> pilhaFila = new ConcurrentLinkedQueue<ObjetoFilaThread>();
 
-    public static void add(ObjetoFilaThread objetoFilaThread) {
+    public static void add(ObjetoFilaThread objetoFilaThread) {//método static para adicionar o objeto na lista
         pilhaFila.add(objetoFilaThread);
     }
     
