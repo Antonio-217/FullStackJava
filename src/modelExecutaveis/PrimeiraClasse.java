@@ -12,7 +12,7 @@ public class PrimeiraClasse {
         String nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
         
         Aluno aluno1 = new Aluno();
-        aluno1.setNome(nome);
+        
         
         for (int i = 0; i <= 4; i++) {
             
@@ -21,7 +21,7 @@ public class PrimeiraClasse {
             
             Disciplina disciplina = new Disciplina();
             disciplina.setDisciplina(nomeDisciplina);
-            disciplina.setNota(Double.valueOf(notaDisciplina));
+            
             
             aluno1.getDisciplinas().add(disciplina);
         }
